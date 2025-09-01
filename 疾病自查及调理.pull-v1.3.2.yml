@@ -1,0 +1,1962 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: 生产环境测试，不要动！！！！！！！
+  use_icon_as_answer_icon: true
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/deepseek:0.0.6@dd589dc093c8084925858034ab5ec1fdf0d33819f43226c2f8c4a749a9acbbb2
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/ollama:0.0.6@f430f3eb959f4863b1e87171544a8fec179441b90deda5693c85f07712d2a68c
+kind: app
+version: 0.3.1
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 20
+        file_size_limit: 500
+        image_file_size_limit: 1024
+        video_file_size_limit: 1024
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: parameter-extractor
+      id: 1753757872712-source-1753757644930-target
+      selected: false
+      source: '1753757872712'
+      sourceHandle: source
+      target: '1753757644930'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: knowledge-retrieval
+      id: 1753757644930-source-1753716631565-target
+      selected: false
+      source: '1753757644930'
+      sourceHandle: source
+      target: '1753716631565'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1753716631565-source-1753725292794-target
+      selected: false
+      source: '1753716631565'
+      sourceHandle: source
+      target: '1753725292794'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: if-else
+      id: 1753690909896-source-1753803512768-target
+      source: '1753690909896'
+      sourceHandle: source
+      target: '1753803512768'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: tool
+      id: 1753803512768-false-1753802764061-target
+      source: '1753803512768'
+      sourceHandle: 'false'
+      target: '1753802764061'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: tool
+      id: 1753803512768-false-1753728247768-target
+      source: '1753803512768'
+      sourceHandle: 'false'
+      target: '1753728247768'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: tool
+      id: 1753803512768-false-1753728239714-target
+      source: '1753803512768'
+      sourceHandle: 'false'
+      target: '1753728239714'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: knowledge-retrieval
+      id: 1753803512768-false-1753728222040-target
+      source: '1753803512768'
+      sourceHandle: 'false'
+      target: '1753728222040'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1753725292794-source-1753724343756-target
+      source: '1753725292794'
+      sourceHandle: source
+      target: '1753724343756'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: knowledge-retrieval
+      id: 1753716640547-source-1753757547289-target
+      source: '1753716640547'
+      sourceHandle: source
+      target: '1753757547289'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1753757547289-source-1753757872712-target
+      source: '1753757547289'
+      sourceHandle: source
+      target: '1753757872712'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1753804077768-source-1753803297825-target
+      source: '1753804077768'
+      sourceHandle: source
+      target: '1753803297825'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1753804045114-source-1753804077768-target
+      source: '1753804045114'
+      sourceHandle: source
+      target: '1753804077768'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: knowledge-retrieval
+      id: 1753804037843-source-1753804045114-target
+      source: '1753804037843'
+      sourceHandle: source
+      target: '1753804045114'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: parameter-extractor
+      id: 1753804025961-source-1753804037843-target
+      source: '1753804025961'
+      sourceHandle: source
+      target: '1753804037843'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: knowledge-retrieval
+      id: 1753803512768-true-1753804004915-target
+      source: '1753803512768'
+      sourceHandle: 'true'
+      target: '1753804004915'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1753804004915-source-1753804025961-target
+      source: '1753804004915'
+      sourceHandle: source
+      target: '1753804025961'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: parameter-extractor
+      id: 1753597150428-source-1753690909896-target
+      source: '1753597150428'
+      sourceHandle: source
+      target: '1753690909896'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1753803297825-source-1753805048035-target
+      source: '1753803297825'
+      sourceHandle: source
+      target: '1753805048035'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1753724343756-source-1753805051288-target
+      source: '1753724343756'
+      sourceHandle: source
+      target: '1753805051288'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: variable-aggregator
+        targetType: llm
+      id: 1753845107356-source-1753729115391-target
+      source: '1753845107356'
+      sourceHandle: source
+      target: '1753729115391'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1753728222040-source-1753729115391-target
+      source: '1753728222040'
+      sourceHandle: source
+      target: '1753729115391'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: variable-aggregator
+      id: 1753728239714-source-1753845107356-target
+      source: '1753728239714'
+      sourceHandle: source
+      target: '1753845107356'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: variable-aggregator
+      id: 1753728247768-source-1753845107356-target
+      source: '1753728247768'
+      sourceHandle: source
+      target: '1753845107356'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: variable-aggregator
+      id: 1753802764061-source-1753845107356-target
+      source: '1753802764061'
+      sourceHandle: source
+      target: '1753845107356'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: parameter-extractor
+      id: 1753729115391-source-1753716640547-target
+      source: '1753729115391'
+      sourceHandle: source
+      target: '1753716640547'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: answer
+      id: 1753803512768-a98d9e1f-7449-4a2c-9078-32059a99ebc4-1753930515326-target
+      source: '1753803512768'
+      sourceHandle: a98d9e1f-7449-4a2c-9078-32059a99ebc4
+      target: '1753930515326'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables: []
+      height: 54
+      id: '1753597150428'
+      position:
+        x: 34.395416870307486
+        y: 274
+      positionAbsolute:
+        x: 34.395416870307486
+        y: 274
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        instruction: '1.如果不存在明确的疾病名称或者症状，则禁止猜测和输出疾病名称。
+
+          2如果存在明确的疾病名称或者症状，则把{{#sys.query#}}改为标准学术语，并提取。
+
+          3.如果没有出现明确的疾病名称或者症状，则不要提取任何参数内容，让提取结果为null。'
+        model:
+          completion_params:
+            top_p: 0.1
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        parameters:
+        - description: 症状和身体状态
+          name: illness_symptom
+          required: true
+          type: string
+        - description: 疾病名称
+          name: illness_name
+          required: false
+          type: string
+        query:
+        - sys
+        - query
+        reasoning_mode: prompt
+        selected: false
+        title: 提取用户输入关键词
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753690909896'
+      position:
+        x: 42.46288015570758
+        y: 509.6327993950832
+      positionAbsolute:
+        x: 42.46288015570758
+        y: 509.6327993950832
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        dataset_ids:
+        - P1tcLh+XHoI0unI7HXyVF+7iUGy+dpIY4tzDRNOqUOQnr2yvQEevWaM7TU5t8GyK
+        - v/rfrFuEgzFZ+bqC9yCSEs0mMAFtm1EsQkdyA5MPa4r1Z7FNwYIjUT6jDSpnhBbF
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: weighted_score
+          top_k: 4
+          weights:
+            keyword_setting:
+              keyword_weight: 0.3
+            vector_setting:
+              embedding_model_name: bge-m3
+              embedding_provider_name: langgenius/ollama/ollama
+              vector_weight: 0.7
+        query_variable_selector:
+        - '1753757644930'
+        - tcm_gx
+        retrieval_mode: multiple
+        selected: false
+        title: 食疗调理知识库检索
+        type: knowledge-retrieval
+      height: 120
+      id: '1753716631565'
+      position:
+        x: 1740.0235012887938
+        y: 227.63505621160743
+      positionAbsolute:
+        x: 1740.0235012887938
+        y: 227.63505621160743
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        instruction: ''
+        model:
+          completion_params:
+            temperature: 0.1
+            top_p: 0.1
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        parameters:
+        - description: 疾病名和症状
+          name: illness_name
+          required: true
+          type: string
+        query:
+        - '1753729115391'
+        - text
+        reasoning_mode: prompt
+        selected: false
+        title: 提取疾病名称和症状
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753716640547'
+      position:
+        x: 1341.2245270258973
+        y: 227.63505621160743
+      positionAbsolute:
+        x: 1341.2245270258973
+        y: 227.63505621160743
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1753729115391'
+          - text
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 5a054f58-1795-495e-a024-f821715eabc6
+          role: system
+          text: '1.把{{#context#}}整理为表格，使用表格增强内容的可读性。
+
+
+            2.概率按降序排列，并与{{#1753725292794.text#}}的图表结合为整体。
+
+
+            3要求最后生成的表格有[疾病名称],[猜测概率],[症状/原因],[中医病理],[中医治理],[食疗建议]。'
+        - id: 1934d520-9cb6-4953-94df-b754a07346cf
+          role: user
+          text: 不要输出最终表格以外的内容
+        selected: false
+        title: 推测+食疗最终格式整理
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753724343756'
+      position:
+        x: 2184.4178945570666
+        y: 509.6327993950832
+      positionAbsolute:
+        x: 2184.4178945570666
+        y: 509.6327993950832
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1753716631565'
+          - result
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.2
+            top_p: 0.2
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 6cbf1168-43b0-483b-acd6-bb7ba710701b
+          role: system
+          text: '1.以{{#sys.query#}}为需求，{{#1753757872712.text#}}为参考，依照{{#1753757644930.tcm_gx#}}，在{{#context#}}分别选择合适的食疗调理建议，以缓解{{#1753716640547.illness_name#}}的疾病症状。
+
+
+            2.以md格式的表格显示输出，要求疾病名分别对应相应的食疗推荐。'
+        selected: false
+        title: 食疗资料推荐整理
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753725292794'
+      position:
+        x: 1740.0235012887938
+        y: 509.6327993950832
+      positionAbsolute:
+        x: 1740.0235012887938
+        y: 509.6327993950832
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        dataset_ids:
+        - EAy73IAooHyfW9KG4HxcMcKXLCQnKmyx7HT/lv9roEoTRoa3ZC3bd6VWpSRh4Xf4
+        - GRkBNnV4G9uFjO1aPmbKc41g8YaCV9J01965t5yvSq578+btVJjQ3ZFvK+xoiIOA
+        - 6GYPZgfernfLA4NIEGGQ7y8EZxYZmS2OlX6j4dKe2MzInN+wZp24FKl2WQOH3mHU
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: false
+          reranking_mode: weighted_score
+          reranking_model:
+            model: ''
+            provider: ''
+          score_threshold: null
+          top_k: 4
+          weights:
+            keyword_setting:
+              keyword_weight: 0.7
+            vector_setting:
+              embedding_model_name: bge-m3
+              embedding_provider_name: langgenius/ollama/ollama
+              vector_weight: 0.3
+        query_variable_selector:
+        - '1753690909896'
+        - illness_symptom
+        retrieval_mode: multiple
+        selected: false
+        title: 疾病分类及症状判断知识库检索
+        type: knowledge-retrieval
+      height: 148
+      id: '1753728222040'
+      position:
+        x: 376.3531280501651
+        y: 235.98125557741673
+      positionAbsolute:
+        x: 376.3531280501651
+        y: 235.98125557741673
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: used for linking to webpages
+            ja_JP: used for linking to webpages
+            pt_BR: used for linking to webpages
+            zh_Hans: 用于链接到网页
+          label:
+            en_US: URL
+            ja_JP: URL
+            pt_BR: URL
+            zh_Hans: 网页链接
+          llm_description: url for scraping
+          max: null
+          min: null
+          name: url
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+            like Gecko) Chrome/100.0.1000.0 Safari/537.36
+          form: form
+          human_description:
+            en_US: used for identifying the browser.
+            ja_JP: used for identifying the browser.
+            pt_BR: used for identifying the browser.
+            zh_Hans: 用于识别浏览器。
+          label:
+            en_US: User Agent
+            ja_JP: User Agent
+            pt_BR: User Agent
+            zh_Hans: User Agent
+          llm_description: null
+          max: null
+          min: null
+          name: user_agent
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: 'false'
+          form: form
+          human_description:
+            en_US: If true, the crawler will only return the page summary content.
+            ja_JP: If true, the crawler will only return the page summary content.
+            pt_BR: If true, the crawler will only return the page summary content.
+            zh_Hans: 如果启用，爬虫将仅返回页面摘要内容。
+          label:
+            en_US: Whether to generate summary
+            ja_JP: Whether to generate summary
+            pt_BR: Whether to generate summary
+            zh_Hans: 是否生成摘要
+          llm_description: null
+          max: null
+          min: null
+          name: generate_summary
+          options:
+          - icon: null
+            label:
+              en_US: 'Yes'
+              ja_JP: 'Yes'
+              pt_BR: 'Yes'
+              zh_Hans: 是
+            value: 'true'
+          - icon: null
+            label:
+              en_US: 'No'
+              ja_JP: 'No'
+              pt_BR: 'No'
+              zh_Hans: 否
+            value: 'false'
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: boolean
+        params:
+          generate_summary: ''
+          url: ''
+          user_agent: ''
+        provider_id: webscraper
+        provider_name: webscraper
+        provider_type: builtin
+        selected: false
+        title: “丁香医生“网站查询
+        tool_configurations:
+          generate_summary:
+            type: constant
+            value: false
+          user_agent:
+            type: mixed
+            value: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+              like Gecko) Chrome/100.0.1000.0 Safari/537.36
+        tool_description: 一个用于爬取网页的工具。
+        tool_label: 网页爬虫
+        tool_name: webscraper
+        tool_node_version: '2'
+        tool_parameters:
+          url:
+            type: mixed
+            value: https://dxy.com/search/result?query={{#1753690909896.illness_symptom#}}
+        type: tool
+      height: 116
+      id: '1753728239714'
+      position:
+        x: 407.4612527860481
+        y: 487.6806438706547
+      positionAbsolute:
+        x: 407.4612527860481
+        y: 487.6806438706547
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: used for linking to webpages
+            ja_JP: used for linking to webpages
+            pt_BR: used for linking to webpages
+            zh_Hans: 用于链接到网页
+          label:
+            en_US: URL
+            ja_JP: URL
+            pt_BR: URL
+            zh_Hans: 网页链接
+          llm_description: url for scraping
+          max: null
+          min: null
+          name: url
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+            like Gecko) Chrome/100.0.1000.0 Safari/537.36
+          form: form
+          human_description:
+            en_US: used for identifying the browser.
+            ja_JP: used for identifying the browser.
+            pt_BR: used for identifying the browser.
+            zh_Hans: 用于识别浏览器。
+          label:
+            en_US: User Agent
+            ja_JP: User Agent
+            pt_BR: User Agent
+            zh_Hans: User Agent
+          llm_description: null
+          max: null
+          min: null
+          name: user_agent
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: 'false'
+          form: form
+          human_description:
+            en_US: If true, the crawler will only return the page summary content.
+            ja_JP: If true, the crawler will only return the page summary content.
+            pt_BR: If true, the crawler will only return the page summary content.
+            zh_Hans: 如果启用，爬虫将仅返回页面摘要内容。
+          label:
+            en_US: Whether to generate summary
+            ja_JP: Whether to generate summary
+            pt_BR: Whether to generate summary
+            zh_Hans: 是否生成摘要
+          llm_description: null
+          max: null
+          min: null
+          name: generate_summary
+          options:
+          - icon: null
+            label:
+              en_US: 'Yes'
+              ja_JP: 'Yes'
+              pt_BR: 'Yes'
+              zh_Hans: 是
+            value: 'true'
+          - icon: null
+            label:
+              en_US: 'No'
+              ja_JP: 'No'
+              pt_BR: 'No'
+              zh_Hans: 否
+            value: 'false'
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: boolean
+        params:
+          generate_summary: ''
+          url: ''
+          user_agent: ''
+        provider_id: webscraper
+        provider_name: webscraper
+        provider_type: builtin
+        selected: false
+        title: “中国医药信息查询平台“
+        tool_configurations:
+          generate_summary:
+            type: constant
+            value: false
+          user_agent:
+            type: mixed
+            value: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+              like Gecko) Chrome/100.0.1000.0 Safari/537.36
+        tool_description: 一个用于爬取网页的工具。
+        tool_label: 网页爬虫
+        tool_name: webscraper
+        tool_node_version: '2'
+        tool_parameters:
+          url:
+            type: mixed
+            value: https://www.dayi.org.cn/search?keyword={{#1753690909896.illness_symptom#}}
+        type: tool
+      height: 116
+      id: '1753728247768'
+      position:
+        x: 416.48443161628273
+        y: 670.8777390255731
+      positionAbsolute:
+        x: 416.48443161628273
+        y: 670.8777390255731
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1753728222040'
+          - result
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.2
+            top_p: 0.2
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: ada9b637-4519-49f5-ae12-22cc688b590c
+          role: system
+          text: '1.整理{{#1753845107356.output#}}，减少无关内容，只保留和关键词{{#1753690909896.illness_symptom#}}{{#1753690909896.illness_name#}}等的相关信息
+
+
+            2.根据用户输入{{#sys.query#}}, 以{{#context#}}为基础知识，以{{#1753845107356.output#}}为案例知识，分析用户疾病给出疾病名，以及猜测的百分比概率，并备注症状和原因。'
+        selected: false
+        title: 分析疾病可能性及概率
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753729115391'
+      position:
+        x: 1065.6010937093588
+        y: 356.8941721322604
+      positionAbsolute:
+        x: 1065.6010937093588
+        y: 356.8941721322604
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        dataset_ids:
+        - v/rfrFuEgzFZ+bqC9yCSEs0mMAFtm1EsQkdyA5MPa4r1Z7FNwYIjUT6jDSpnhBbF
+        - 6GYPZgfernfLA4NIEGGQ7y8EZxYZmS2OlX6j4dKe2MzInN+wZp24FKl2WQOH3mHU
+        - GRkBNnV4G9uFjO1aPmbKc41g8YaCV9J01965t5yvSq578+btVJjQ3ZFvK+xoiIOA
+        desc: ''
+        metadata_filtering_mode: disabled
+        metadata_model_config:
+          completion_params:
+            temperature: 0.4
+            top_p: 0.4
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        multiple_retrieval_config:
+          reranking_enable: false
+          reranking_mode: weighted_score
+          reranking_model:
+            model: ''
+            provider: ''
+          score_threshold: null
+          top_k: 4
+          weights:
+            keyword_setting:
+              keyword_weight: 0.7
+            vector_setting:
+              embedding_model_name: bge-m3
+              embedding_provider_name: langgenius/ollama/ollama
+              vector_weight: 0.3
+        query_variable_selector:
+        - '1753716640547'
+        - illness_name
+        retrieval_mode: multiple
+        selected: false
+        title: 西医疾病中医治理所需功效知识库
+        type: knowledge-retrieval
+      height: 148
+      id: '1753757547289'
+      position:
+        x: 1341.2245270258973
+        y: 356.8941721322604
+      positionAbsolute:
+        x: 1341.2245270258973
+        y: 356.8941721322604
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.1
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        parameters:
+        - description: 疾病名称和功效
+          name: tcm_gx
+          required: true
+          type: string
+        query:
+        - '1753757872712'
+        - text
+        reasoning_mode: prompt
+        selected: false
+        title: 提取中医治理所需功效
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753757644930'
+      position:
+        x: 1341.2245270258973
+        y: 746.1666666666667
+      positionAbsolute:
+        x: 1341.2245270258973
+        y: 746.1666666666667
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1753757547289'
+          - result
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.2
+            top_p: 0.2
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: cef993ac-a2d5-46a3-82a9-4c45e7018ceb
+          role: system
+          text: '根据{{#context#}}，从下面[功效]
+
+            “解表 　清热 　温里
+
+            泻下 　消导　 祛湿
+
+            理气　 理血 　补益
+
+            固涩 　开窍 　驱虫
+
+            镇潜熄风 祛风湿
+
+            止咳化痰平喘“
+
+            匹配可以缓解{{#1753716640547.illness_name#}}疾病所需的[功效]，并对应各自的[疾病名称]和对应的[功效]生成md表格'
+        selected: false
+        title: 匹配疾病治理所需功效
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753757872712'
+      position:
+        x: 1341.2245270258973
+        y: 572.7694759917116
+      positionAbsolute:
+        x: 1341.2245270258973
+        y: 572.7694759917116
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        author: talkduo
+        desc: ''
+        height: 815
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          16px;","text":"病症猜测","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          16px;","textFormat":0}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textStyle":"font-size:
+          16px;"}}'
+        theme: violet
+        title: ''
+        type: ''
+        width: 1302
+      height: 815
+      id: '1753794420106'
+      position:
+        x: 11.108142160115449
+        y: 175.05586588321663
+      positionAbsolute:
+        x: 11.108142160115449
+        y: 175.05586588321663
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 1302
+    - data:
+        author: talkduo
+        desc: ''
+        height: 818
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          16px;","text":"判断所需功效","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          16px;","textFormat":0}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textStyle":"font-size:
+          16px;"}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 385
+      height: 818
+      id: '1753794602693'
+      position:
+        x: 1315.1636339548825
+        y: 175.05586588321663
+      positionAbsolute:
+        x: 1315.1636339548825
+        y: 175.05586588321663
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 385
+    - data:
+        author: talkduo
+        desc: ''
+        height: 814
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          16px;","text":"查询合适食疗","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          16px;","textFormat":0}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textStyle":"font-size:
+          16px;"}}'
+        theme: yellow
+        title: ''
+        type: ''
+        width: 373
+      height: 814
+      id: '1753794712869'
+      position:
+        x: 1698.7480997870898
+        y: 175.05586588321663
+      positionAbsolute:
+        x: 1698.7480997870898
+        y: 175.05586588321663
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 373
+    - data:
+        author: talkduo
+        desc: ''
+        height: 1219
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"font-size:
+          16px;","text":"最终整理输出","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textStyle":"font-size:
+          16px;","textFormat":0}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textStyle":"font-size:
+          16px;"}}'
+        theme: pink
+        title: ''
+        type: ''
+        width: 538
+      height: 1219
+      id: '1753794838658'
+      position:
+        x: 2062.305303905035
+        y: 175.05586588321663
+      positionAbsolute:
+        x: 2062.305303905035
+        y: 175.05586588321663
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 538
+    - data:
+        author: talkduo
+        desc: ''
+        height: 88
+        selected: false
+        showAuthor: false
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":3,"mode":"normal","style":"font-size:
+          16px;","text":"talkduo.top","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}}'
+        theme: violet
+        title: ''
+        type: ''
+        width: 240
+      height: 88
+      id: '1753795194429'
+      position:
+        x: 621.3633374208046
+        y: 476.1335157119304
+      positionAbsolute:
+        x: 621.3633374208046
+        y: 476.1335157119304
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        author: talkduo
+        desc: ''
+        height: 88
+        selected: false
+        showAuthor: false
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":3,"mode":"normal","style":"font-size:
+          16px;","text":"talkduo.top","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}}'
+        theme: violet
+        title: ' (1)'
+        type: ''
+        width: 240
+      height: 88
+      id: '17537953599050'
+      position:
+        x: 254.85879381104058
+        y: 617.8923007965635
+      positionAbsolute:
+        x: 254.85879381104058
+        y: 617.8923007965635
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        author: talkduo
+        desc: ''
+        height: 88
+        selected: false
+        showAuthor: false
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":3,"mode":"normal","style":"font-size:
+          16px;","text":"talkduo.top","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}}'
+        theme: violet
+        title: '  (2)'
+        type: ''
+        width: 240
+      height: 88
+      id: '17537953770690'
+      position:
+        x: 1021.403051546142
+        y: 592.1980515339463
+      positionAbsolute:
+        x: 1021.403051546142
+        y: 592.1980515339463
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        author: talkduo
+        desc: ''
+        height: 88
+        selected: false
+        showAuthor: false
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":3,"mode":"normal","style":"font-size:
+          16px;","text":"talkduo.top","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}}'
+        theme: blue
+        title: '  (3)'
+        type: ''
+        width: 240
+      height: 88
+      id: '17537953981830'
+      position:
+        x: 1328.9973523007884
+        y: 476.1335157119304
+      positionAbsolute:
+        x: 1328.9973523007884
+        y: 476.1335157119304
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        author: talkduo
+        desc: ''
+        height: 88
+        selected: false
+        showAuthor: false
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":3,"mode":"normal","style":"font-size:
+          16px;","text":"talkduo.top","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}}'
+        theme: blue
+        title: '  (4)'
+        type: ''
+        width: 240
+      height: 88
+      id: '17537954334060'
+      position:
+        x: 1452.811258820358
+        y: 636.1986621623684
+      positionAbsolute:
+        x: 1452.811258820358
+        y: 636.1986621623684
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        author: talkduo
+        desc: ''
+        height: 88
+        selected: false
+        showAuthor: false
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":3,"mode":"normal","style":"font-size:
+          16px;","text":"talkduo.top","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}}'
+        theme: yellow
+        title: '  (4)'
+        type: ''
+        width: 240
+      height: 88
+      id: '17537954531900'
+      position:
+        x: 1806.1586237606987
+        y: 636.1986621623684
+      positionAbsolute:
+        x: 1806.1586237606987
+        y: 636.1986621623684
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        author: talkduo
+        desc: ''
+        height: 88
+        selected: false
+        showAuthor: false
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":3,"mode":"normal","style":"font-size:
+          16px;","text":"talkduo.top","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}}'
+        theme: pink
+        title: '  (5)'
+        type: ''
+        width: 240
+      height: 88
+      id: '17537954712230'
+      position:
+        x: 2136.978965842418
+        y: 411.39281698598245
+      positionAbsolute:
+        x: 2136.978965842418
+        y: 411.39281698598245
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        author: talkduo
+        desc: ''
+        height: 88
+        selected: false
+        showAuthor: false
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":3,"mode":"normal","style":"font-size:
+          16px;","text":"talkduo.top","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}}'
+        theme: yellow
+        title: '  (5)'
+        type: ''
+        width: 240
+      height: 88
+      id: '17537954826360'
+      position:
+        x: 1707.855010470467
+        y: 385.0536858017302
+      positionAbsolute:
+        x: 1707.855010470467
+        y: 385.0536858017302
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        author: talkduo
+        desc: ''
+        height: 88
+        selected: false
+        showAuthor: false
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":3,"mode":"normal","style":"font-size:
+          16px;","text":"talkduo.top","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}],"direction":"ltr","format":"","indent":0,"type":"root","version":1,"textFormat":3,"textStyle":"font-size:
+          16px;"}}'
+        theme: pink
+        title: '  (6)'
+        type: ''
+        width: 240
+      height: 88
+      id: '17537955405350'
+      position:
+        x: 2266.1437495218092
+        y: 784.7982939272879
+      positionAbsolute:
+        x: 2266.1437495218092
+        y: 784.7982939272879
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: used for linking to webpages
+            ja_JP: used for linking to webpages
+            pt_BR: used for linking to webpages
+            zh_Hans: 用于链接到网页
+          label:
+            en_US: URL
+            ja_JP: URL
+            pt_BR: URL
+            zh_Hans: 网页链接
+          llm_description: url for scraping
+          max: null
+          min: null
+          name: url
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+            like Gecko) Chrome/100.0.1000.0 Safari/537.36
+          form: form
+          human_description:
+            en_US: used for identifying the browser.
+            ja_JP: used for identifying the browser.
+            pt_BR: used for identifying the browser.
+            zh_Hans: 用于识别浏览器。
+          label:
+            en_US: User Agent
+            ja_JP: User Agent
+            pt_BR: User Agent
+            zh_Hans: User Agent
+          llm_description: null
+          max: null
+          min: null
+          name: user_agent
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: 'false'
+          form: form
+          human_description:
+            en_US: If true, the crawler will only return the page summary content.
+            ja_JP: If true, the crawler will only return the page summary content.
+            pt_BR: If true, the crawler will only return the page summary content.
+            zh_Hans: 如果启用，爬虫将仅返回页面摘要内容。
+          label:
+            en_US: Whether to generate summary
+            ja_JP: Whether to generate summary
+            pt_BR: Whether to generate summary
+            zh_Hans: 是否生成摘要
+          llm_description: null
+          max: null
+          min: null
+          name: generate_summary
+          options:
+          - icon: null
+            label:
+              en_US: 'Yes'
+              ja_JP: 'Yes'
+              pt_BR: 'Yes'
+              zh_Hans: 是
+            value: 'true'
+          - icon: null
+            label:
+              en_US: 'No'
+              ja_JP: 'No'
+              pt_BR: 'No'
+              zh_Hans: 否
+            value: 'false'
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: boolean
+        params:
+          generate_summary: ''
+          url: ''
+          user_agent: ''
+        provider_id: webscraper
+        provider_name: webscraper
+        provider_type: builtin
+        selected: false
+        title: bing网络搜索
+        tool_configurations:
+          generate_summary:
+            type: constant
+            value: false
+          user_agent:
+            type: mixed
+            value: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+              like Gecko) Chrome/100.0.1000.0 Safari/537.36
+        tool_description: 一个用于爬取网页的工具。
+        tool_label: 网页爬虫
+        tool_name: webscraper
+        tool_node_version: '2'
+        tool_parameters:
+          url:
+            type: mixed
+            value: https://cn.bing.com/search?q={{#1753690909896.illness_name#}}+{{#1753690909896.illness_symptom#}}
+        type: tool
+      height: 116
+      id: '1753802764061'
+      position:
+        x: 407.4612527860481
+        y: 863.1754641110093
+      positionAbsolute:
+        x: 407.4612527860481
+        y: 863.1754641110093
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1753804077768'
+          - text
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.2
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 9eeee26c-fee5-49a0-91dc-96acc081d113
+          role: system
+          text: '1.把{{#context#}}{{#1753690909896.illness_name#}}整理为表格，使用表格增强内容的可读性。
+
+            2.要求最后生成的表格有[疾病名称]，[症状/原因],[中医病理],[中医治理],[食疗建议]。'
+        - id: 716fe244-d1a2-4737-916f-aa12c30e86b6
+          role: user
+          text: 不要输出最终表格以外的内容
+        selected: false
+        title: 食疗最终格式整理
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753803297825'
+      position:
+        x: 2123.8049450794615
+        y: 987.5191340121563
+      positionAbsolute:
+        x: 2123.8049450794615
+        y: 987.5191340121563
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: not empty
+            id: 6bd3c2c7-7c49-4ac0-8ba0-4c87f9690ce4
+            value: ''
+            varType: string
+            variable_selector:
+            - '1753690909896'
+            - illness_name
+          - comparison_operator: empty
+            id: 7b4279d7-a341-49b8-b9e1-0e0a4adf2012
+            value: ''
+            varType: string
+            variable_selector:
+            - '1753690909896'
+            - illness_symptom
+          id: 'true'
+          logical_operator: and
+        - case_id: a98d9e1f-7449-4a2c-9078-32059a99ebc4
+          conditions:
+          - comparison_operator: empty
+            id: 261cce62-7628-4bd6-b324-25533a6a54c8
+            value: ''
+            varType: string
+            variable_selector:
+            - '1753690909896'
+            - illness_name
+          - comparison_operator: empty
+            id: d24a5fbf-bb9a-447f-9e1d-244499824ce3
+            value: ''
+            varType: string
+            variable_selector:
+            - '1753690909896'
+            - illness_symptom
+          id: a98d9e1f-7449-4a2c-9078-32059a99ebc4
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 判断是否知晓疾病名
+        type: if-else
+      height: 226
+      id: '1753803512768'
+      position:
+        x: 28.752736312215234
+        y: 746.1666666666667
+      positionAbsolute:
+        x: 28.752736312215234
+        y: 746.1666666666667
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        author: talkduo
+        desc: ''
+        height: 396
+        selected: false
+        showAuthor: true
+        text: ''
+        theme: blue
+        title: ''
+        type: ''
+        width: 2082
+      height: 396
+      id: '1753803849030'
+      position:
+        x: -7.915032307766978
+        y: 987.5191340121563
+      positionAbsolute:
+        x: -7.915032307766978
+        y: 987.5191340121563
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 2082
+    - data:
+        dataset_ids:
+        - GRkBNnV4G9uFjO1aPmbKc41g8YaCV9J01965t5yvSq578+btVJjQ3ZFvK+xoiIOA
+        - 6GYPZgfernfLA4NIEGGQ7y8EZxYZmS2OlX6j4dKe2MzInN+wZp24FKl2WQOH3mHU
+        - EAy73IAooHyfW9KG4HxcMcKXLCQnKmyx7HT/lv9roEoTRoa3ZC3bd6VWpSRh4Xf4
+        - v/rfrFuEgzFZ+bqC9yCSEs0mMAFtm1EsQkdyA5MPa4r1Z7FNwYIjUT6jDSpnhBbF
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: weighted_score
+          top_k: 4
+          weights:
+            keyword_setting:
+              keyword_weight: 0.3
+            vector_setting:
+              embedding_model_name: bge-m3
+              embedding_provider_name: langgenius/ollama/ollama
+              vector_weight: 0.7
+        query_variable_selector:
+        - '1753690909896'
+        - illness_name
+        retrieval_mode: multiple
+        selected: false
+        title: 西医疾病中医治理所需功效知识库
+        type: knowledge-retrieval
+      height: 176
+      id: '1753804004915'
+      position:
+        x: 42.46288015570758
+        y: 1031.10631084613
+      positionAbsolute:
+        x: 42.46288015570758
+        y: 1031.10631084613
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1753804004915'
+          - result
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 9c70bff8-ca7e-4966-93d6-42aa168d9270
+          role: system
+          text: '根据{{#context#}}，从下面[功效]
+
+            “解表 　清热 　温里
+
+            泻下 　消导　 祛湿
+
+            理气　 理血 　补益
+
+            固涩 　开窍 　驱虫
+
+            镇潜熄风 祛风湿
+
+            止咳化痰平喘“
+
+            匹配可以缓解{{#1753690909896.illness_name#}}疾病所需的[功效]，并对应各自的[疾病名称]和对应的[功效]生成md表格'
+        selected: false
+        title: 匹配疾病治理所需功效
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753804025961'
+      position:
+        x: 366.4150801141504
+        y: 1135.021943367979
+      positionAbsolute:
+        x: 366.4150801141504
+        y: 1135.021943367979
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.3
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        parameters:
+        - description: 疾病名称和功效
+          name: tcm_gx
+          required: true
+          type: string
+        query:
+        - '1753804025961'
+        - text
+        reasoning_mode: prompt
+        selected: false
+        title: 西医疾病中医治理所需功效知识库
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753804037843'
+      position:
+        x: 774.4194252837448
+        y: 1227.8686643671815
+      positionAbsolute:
+        x: 774.4194252837448
+        y: 1227.8686643671815
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        dataset_ids:
+        - v/rfrFuEgzFZ+bqC9yCSEs0mMAFtm1EsQkdyA5MPa4r1Z7FNwYIjUT6jDSpnhBbF
+        - P1tcLh+XHoI0unI7HXyVF+7iUGy+dpIY4tzDRNOqUOQnr2yvQEevWaM7TU5t8GyK
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: weighted_score
+          top_k: 4
+          weights:
+            keyword_setting:
+              keyword_weight: 0.3
+            vector_setting:
+              embedding_model_name: bge-m3
+              embedding_provider_name: langgenius/ollama/ollama
+              vector_weight: 0.7
+        query_variable_selector:
+        - '1753804037843'
+        - tcm_gx
+        retrieval_mode: multiple
+        selected: false
+        title: 食疗调理知识库检索
+        type: knowledge-retrieval
+      height: 120
+      id: '1753804045114'
+      position:
+        x: 1178.4092912722033
+        y: 1150.5671444176778
+      positionAbsolute:
+        x: 1178.4092912722033
+        y: 1150.5671444176778
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1753804045114'
+          - result
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.3
+          mode: chat
+          name: deepseek-chat
+          provider: langgenius/deepseek/deepseek
+        prompt_template:
+        - id: 3be92954-016c-4238-906b-cd3394481b69
+          role: system
+          text: '1.以{{#sys.query#}}为需求，依照{{#1753804037843.tcm_gx#}}，在{{#context#}}分别选择合适的食疗调理建议，以缓解{{#1753690909896.illness_name#}}的疾病症状。
+
+
+            2.以md格式的表格显示输出，要求疾病名分别对应相应的食疗推荐。'
+        selected: false
+        title: 食疗资料推荐整理
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1753804077768'
+      position:
+        x: 1665.2305139327293
+        y: 1088.5075030318594
+      positionAbsolute:
+        x: 1665.2305139327293
+        y: 1088.5075030318594
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1753803297825.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复
+        type: answer
+        variables: []
+      height: 104
+      id: '1753805048035'
+      position:
+        x: 2266.1437495218092
+        y: 1251.1681277249372
+      positionAbsolute:
+        x: 2266.1437495218092
+        y: 1251.1681277249372
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1753724343756.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复
+        type: answer
+        variables: []
+      height: 104
+      id: '1753805051288'
+      position:
+        x: 2285.505768497376
+        y: 720.6583844284368
+      positionAbsolute:
+        x: 2285.505768497376
+        y: 720.6583844284368
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        output_type: string
+        selected: false
+        title: 网络搜索内容聚合
+        type: variable-aggregator
+        variables:
+        - - '1753728247768'
+          - text
+        - - '1753728239714'
+          - text
+        - - '1753802764061'
+          - text
+      height: 152
+      id: '1753845107356'
+      position:
+        x: 765.0048551709691
+        y: 636.1986621623684
+      positionAbsolute:
+        x: 765.0048551709691
+        y: 636.1986621623684
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '请注意，该应用为疾病猜测和食疗建议。
+
+          您的提示词内不包含与疾病的【名字】/【症状】，请重新拟定提示词'
+        desc: ''
+        selected: false
+        title: 直接回复
+        type: answer
+        variables: []
+      height: 134
+      id: '1753930515326'
+      position:
+        x: 2345.3823333586943
+        y: 869.0046442065036
+      positionAbsolute:
+        x: 2345.3823333586943
+        y: 869.0046442065036
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: 112.4047065913162
+      y: 4.079509977217242
+      zoom: 0.5007652771528542
